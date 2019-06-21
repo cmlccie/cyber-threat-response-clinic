@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "d228ec8e-2a01-4690-b0d6-5c267e7ec849",
+		"name": "Stormbreaker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST cloud/accounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"login\": \"{{cloud_account_login}}\",\n\t\t\"password\": \"{{cloud_account_password}}\",\n\t\t\"status\": \"available\"\n\t\t\n\t}\n]"
+				},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/cloud/accounts",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cloud",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cloud/accounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/cloud/accounts",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cloud",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST cloud/accounts/assign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/cloud/accounts/assign?sessionId={{dcloud_session_id}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cloud",
+						"accounts",
+						"assign"
+					],
+					"query": [
+						{
+							"key": "sessionId",
+							"value": "{{dcloud_session_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET dcloud/sessions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/dcloud/sessions",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"dcloud",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT dcloud/sessions/<id>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/dcloud/sessions/{{dcloud_session_id}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"dcloud",
+						"sessions",
+						"{{dcloud_session_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET cloud/accounts/<login>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{port}}/api/cloud/accounts/{{cloud_account_login}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cloud",
+						"accounts",
+						"{{cloud_account_login}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
